@@ -1,0 +1,16 @@
+.filtro-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .filtro-item {
+    flex: 1 1 calc(20% - 16px);
+    min-width: 200px;
+  }
+  
+  button {
+    margin-top: 16px;
+  }
+  

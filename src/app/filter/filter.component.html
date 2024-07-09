@@ -1,0 +1,57 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Filtro
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="filtro-body">
+      <div class="filtro-item">
+        <mat-form-field appearance="fill">
+          <mat-label>Ano</mat-label>
+          <mat-select [(ngModel)]="filtro.ano">
+            <mat-option *ngFor="let ano of anos" [value]="ano">{{ ano }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <div class="filtro-item">
+        <mat-form-field appearance="fill">
+          <mat-label>Região</mat-label>
+          <mat-select [(ngModel)]="filtro.regiao">
+            <mat-option *ngFor="let regiao of regioes" [value]="regiao">{{ regiao }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <div class="filtro-item">
+        <mat-form-field appearance="fill">
+          <mat-label>Estado</mat-label>
+          <mat-select [(ngModel)]="filtro.estado">
+            <mat-option *ngFor="let estado of estados" [value]="estado">{{ estado }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <div class="filtro-item">
+        <mat-form-field appearance="fill">
+          <mat-label>Idade</mat-label>
+          <mat-select [(ngModel)]="filtro.idade">
+            <mat-option *ngFor="let idade of idades" [value]="idade">{{ idade }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <div class="filtro-item">
+        <mat-form-field appearance="fill">
+          <mat-label>Gênero</mat-label>
+          <mat-select [(ngModel)]="filtro.genero">
+            <mat-option *ngFor="let genero of generos" [value]="genero.value">{{ genero.viewValue }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <button mat-raised-button color="primary" (click)="aplicarFiltro()">Aplicar Filtro</button>
+      <button mat-raised-button color="primary" (click)="resetarFiltro()">Resetar Filtro</button>
+    </div>
+  </mat-expansion-panel>
+  

@@ -1,0 +1,9 @@
+<app-filtro (filtroAplicado)="onFIlterApplied($event)"></app-filtro>
+<div class="chart-container">
+  <app-eficiencia [dados]="dataMap['eficiencia']"></app-eficiencia>
+  <app-regiao-chart [dados]="dataMap['regiao']"></app-regiao-chart>
+  <app-chart [chartOptions]="chartOptionsMap['chart1']"></app-chart>
+  <app-chart [chartOptions]="chartOptionsMap['chart2']"></app-chart>
+  <app-chart [chartOptions]="chartOptionsMap['correlacao']"></app-chart>
+  <app-chart [chartOptions]="chartOptionsMap['faixaEtariaSexo']"></app-chart>
+</div>
