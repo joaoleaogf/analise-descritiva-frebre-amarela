@@ -1,27 +1,47 @@
-# Sandbox
+# Análise Descritiva — Febre Amarela
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+> Dashboard em Angular para explorar **casos e vacinação de febre amarela no Brasil**: distribuição por região, faixa etária e sexo, mapa de calor geográfico e indicadores de eficiência.
 
-## Development server
+![Angular](https://img.shields.io/badge/Angular-16-DD0031?logo=angular&logoColor=white)
+![Highcharts](https://img.shields.io/badge/Highcharts-charts-8087E8)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue)
 
-Run `ng serve` for a dev server. Navigate to http://localhost:4200. The application will automatically reload if you change any of the source files.
+## Visão geral
 
-## Code scaffolding
+Aplicação de análise descritiva que cruza dados de **casos confirmados** e **doses aplicadas** para visualizar padrões espaciais e demográficos da febre amarela. As visualizações cobrem:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Distribuição por região** e por **faixa etária/sexo**;
+- **Mapa de calor** geográfico dos casos (latitude/longitude por município);
+- **Indicadores de eficiência** entre vacinação e incidência;
+- Filtros interativos por período e recorte.
 
-## Build
+## Stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+`Angular 16` · `TypeScript` · `Highcharts` (+ highcharts-more) · `PapaParse` · `RxJS`
 
-## Running unit tests
+## Componentes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+| Componente | Papel |
+|---|---|
+| `chart` | Gráficos descritivos (séries temporais, barras) |
+| `heat` | Mapa de calor geográfico dos casos |
+| `regiao` | Recorte por região do Brasil |
+| `eficiencia` | Relação vacinação × incidência |
+| `filter` | Filtros interativos |
 
-## Running end-to-end tests
+## Dados
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Os arquivos em `src/assets/` (`doses.json`, `geo-cases.json`) contêm **dados públicos agregados** (doses por município/ano e casos por município) — sem informações pessoais identificáveis. Fonte: dados abertos de saúde pública.
 
-## Further help
+## Como rodar
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+npm install
+ng serve
+# abra http://localhost:4200
+```
+
+## Licença
+
+[MIT](LICENSE) © João Leão
